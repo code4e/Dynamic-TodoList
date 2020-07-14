@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/home.css">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+
+    <div class="container bg-white shadow-lg p-3 rounded">
+        <h1 class="text-center text-uppercase">ToDo App</h1>
+        <form action="/submit-todo" id="myform" method="POST">
+
+            <div class="form-group border-top border-bottom border-secondary">
+                <label for="inputAddress" class="text-uppercase">Description</label>
+                <input type="text" class="form-control border-0 element" name="description" required id="inputAddress"
+                    placeholder="What do you need to do?">
+            </div>
+
+            <div class="form-row border-top border-secondary">
+                <div class="form-group col-md-6 border-bottom border-right border-secondary">
+                    <label for="inputState" class="text-uppercase">Category</label>
+                    <select id="inputState" name="category" class="form-control border-0 element custom-select"
+                        required>
+                        <option disabled selected value> -- Select a category -- </option>
+                        <option>Personal</option>
+                        <option>Work</option>
+                        <option>School</option>
+                        <option>Cleaning</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 ">
+                    <div class="md-form md-outline input-with-post-icon datepicker border-bottom border-secondary">
+                        <label for="example" class="text-uppercase">Due Date</label>
+                        <input placeholder="Select date" type="date" name="dueDate" id="example"
+                            class="form-control border-0 element">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="submit-buttons d-flex justify-content-center">
+            <button type="submit" form="myform" class="btn btn-dark addTask text-uppercase"><i class="fa fa-plus" aria-hidden="true"></i> Add Task</button>
+            <button type="submit" form="myform2" class="btn btn-danger addTask text-uppercase"><i class="fa fa-trash" aria-hidden="true"></i> Delete Tasks</button>
+            <button type="submit" class="btn btn-success addTask text-uppercase"><i class="fa fa-check" aria-hidden="true"></i> Done Tasks</button>
+        </div>
+        <form action="/delete-todos" method="POST" id="myform2">
+
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <div class="d-flex">
+                        <input type="checkbox" class="">
+                        <div class="added-item">
+                            <h3>Dapibus ac facilisis in</h3>
+                            <i class="fa fa-calendar text-secondary" aria-hidden="true"></i>
+                            <span class="text-secondary">May 20, 2020</span>
+                        </div>
+                    </div>
+                    <span class="">
+                        <button class="btn btn-primary Disabled">
+                            Work
+                        </button>
+                    </span>
+                </li>
+
+
+
+                <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <div class="d-flex">
+                        <input type="checkbox" class="">
+                        <div class="added-item">
+                            <h3>Dapibus ac facilisis in</h3>
+                            <i class="fa fa-calendar text-secondary" aria-hidden="true"></i>
+                            <span class="text-secondary">May 20, 2020</span>
+                        </div>
+                    </div>
+                    <span class="">
+                        <button class="btn btn-primary Disabled text-uppercase">
+                            Work
+                        </button>
+                    </span>
+                </li>
+
+
+                <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <div class="d-flex">
+                        <input type="checkbox" class="">
+                        <div class="added-item">
+                            <h3>Dapibus ac facilisis in</h3>
+                            <i class="fa fa-calendar text-secondary" aria-hidden="true"></i>
+                            <span class="text-secondary">May 20, 2020</span>
+                        </div>
+                    </div>
+                    <span class="">
+                        <button class="btn btn-primary Disabled text-uppercase">
+                            Work
+                        </button>
+                    </span>
+                </li>
+
+
+                <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <div class="d-flex">
+                        <input type="checkbox" class="">
+                        <div class="added-item">
+                            <h3>Dapibus ac facilisis in</h3>
+                            <i class="fa fa-calendar text-secondary" aria-hidden="true"></i>
+                            <span class="text-secondary">May 20, 2020</span>
+                        </div>
+                    </div>
+                    <span class="">
+                        <button class="btn btn-primary Disabled text-uppercase">
+                            Work
+                        </button>
+                    </span>
+                </li>
+
+
+                <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <div class="d-flex">
+                        <input type="checkbox" class="">
+                        <div class="added-item">
+                            <h3>Dapibus ac facilisis in</h3>
+                            <i class="fa fa-calendar text-secondary" aria-hidden="true"></i>
+                            <span class="text-secondary">May 20, 2020</span>
+                        </div>
+                    </div>
+                    <span class="">
+                        <button class="btn btn-primary Disabled">
+                            Work
+                        </button>
+                    </span>
+                </li>
+
+
+
+                <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <div class="d-flex">
+                        <input type="checkbox" class="">
+                        <div class="added-item">
+                            <h3>Dapibus ac facilisis in</h3>
+                            <i class="fa fa-calendar text-secondary" aria-hidden="true"></i>
+                            <span class="text-secondary">May 20, 2020</span>
+                        </div>
+                    </div>
+                    <span class="">
+                        <button class="btn btn-primary Disabled">
+                            Work
+                        </button>
+                    </span>
+                </li>
+            </ul>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>

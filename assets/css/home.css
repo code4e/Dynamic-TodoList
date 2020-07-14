@@ -1,0 +1,66 @@
+body{
+    background-color: #888888;
+    margin: 0;
+    font-family: 'Arvo', serif;
+}
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.container h1{
+    padding: 15px;
+}
+
+
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat 98.5%;
+}
+
+label{
+    position: relative;
+    left: 10px;
+    top: 3px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.addTask {
+    margin: auto 5px;
+}
+
+.list-group {
+    margin-top: 50px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.4);
+    margin-right: 20px;
+    margin-top: 12px;
+}
+
+i{
+    position: relative;
+    left: 3px;
+    bottom: 1px;
+    margin-right: 5px;
+}
+
+.Disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+input[type="checkbox"]:checked+div h3,
+input[type="checkbox"]:checked+div span,
+input[type="checkbox"]:checked+div i{
+    text-decoration: line-through #ff3333;
+    text-decoration-thickness: 0.1rem;
+    color: gray;
+}
