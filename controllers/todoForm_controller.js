@@ -1,19 +1,21 @@
-
-
-
 const Todos = require("../models/todos");
 module.exports.todoForm = function(req, res){
-    console.log(req.body);
+    // let date = ''
+    // if(req.body.dueDate != ''){
+    //     date = req.body.dueDate.split('-').reverse().join('-');
+    // }
+    let date = req.body.dueDate
     Todos.create({
         description: req.body.description,
         category: req.body.category,
-        dueDate: req.body.dueDate
-    }, function(err, newTodo){
-        if(err){
-            console.log('Could not push into database');
-            return;
+        dueDate: date || "No Deadline"
+    }, function (err, newTodo) {
+        if (err) {
+            console.log('Error putting the contact into database');
+            return
         }
-        console.log(newTodo);
-        return res.render('back');
+        console.log('********', newTodo);
+        return res.redirect('back');
     });
 }
+

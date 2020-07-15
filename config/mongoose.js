@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/todo_db');
+mongoose.connect('mongodb://localhost/todos_app_db');
 
-const db = mongoose.connection;
+const dB = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'Could not establish connection with database'));
-db.once('open', function(){
-    console.log('Database connection successfully established');
+dB.on('error', console.error.bind(console, 'Error connecting to database'));
+
+dB.once('open', function(){
+    console.log('Database is up and running');
 });
+
+module.exports = dB;

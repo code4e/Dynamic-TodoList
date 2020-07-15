@@ -9,7 +9,7 @@ const todoSchema = new mongoose.Schema({
         required: true
     },
     dueDate: {
-        type: Date,
+        type: String,
         default: 'No Deadline'
     }
 });

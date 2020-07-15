@@ -56,6 +56,9 @@ i{
     pointer-events: none;
     cursor: not-allowed;
 }
+.added-item{
+    max-width: 85%;
+}
 
 input[type="checkbox"]:checked+div h3,
 input[type="checkbox"]:checked+div span,
@@ -63,4 +66,23 @@ input[type="checkbox"]:checked+div i{
     text-decoration: line-through #ff3333;
     text-decoration-thickness: 0.1rem;
     color: gray;
+}
+.category{
+    text-transform: uppercase;
+    color: white;
+}
+.Work{
+    background-color: #146e4a;
+}
+.School{
+    background-color: lightseagreen;
+}
+.Personal{
+    background-color: mediumslateblue;
+}
+.Cleaning{
+    background-color: orangered;
+}
+.Other{
+    background-color: yellowgreen;
 }

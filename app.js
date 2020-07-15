@@ -1,14 +1,17 @@
 const port = 8000;
 const express = require('express');
 const db = require('./config/mongoose');
-const Todos = require('./models/todos');
+// const Todos = require('./models/todos');
 const app = express();
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+const path = require('path');
 app.use(express.urlencoded());
-app.use(express.static('assets'));
+app.use(express.static('./assets'));
+app.use('/', require('./routes'));
 
-app.use('/', require('./routes/index'));
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 
 app.listen(port, function(err){
     if(err){
