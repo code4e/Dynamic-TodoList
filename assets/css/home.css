@@ -1,14 +1,16 @@
-body{
+body {
     background-color: #888888;
     margin: 0;
     font-family: 'Arvo', serif;
 }
+
 .form-control:focus {
     border-color: inherit;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-.container h1{
+
+.container h1 {
     padding: 15px;
 }
 
@@ -21,7 +23,7 @@ select {
     background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat 98.5%;
 }
 
-label{
+label {
     position: relative;
     left: 10px;
     top: 3px;
@@ -45,7 +47,7 @@ input[type="checkbox"] {
     margin-top: 12px;
 }
 
-i{
+i {
     position: relative;
     left: 3px;
     bottom: 1px;
@@ -56,33 +58,40 @@ i{
     pointer-events: none;
     cursor: not-allowed;
 }
-.added-item{
+
+.added-item {
     max-width: 85%;
 }
 
-input[type="checkbox"]:checked+div h3,
+input[type="checkbox"]:checked+div h4,
 input[type="checkbox"]:checked+div span,
-input[type="checkbox"]:checked+div i{
+input[type="checkbox"]:checked+div i {
     text-decoration: line-through #ff3333;
     text-decoration-thickness: 0.1rem;
     color: gray;
 }
-.category{
+
+.category {
     text-transform: uppercase;
     color: white;
 }
-.Work{
+
+.Work {
     background-color: #146e4a;
 }
-.School{
+
+.School {
     background-color: lightseagreen;
 }
-.Personal{
+
+.Personal {
     background-color: mediumslateblue;
 }
-.Cleaning{
+
+.Cleaning {
     background-color: orangered;
 }
-.Other{
+
+.Other {
     background-color: yellowgreen;
 }

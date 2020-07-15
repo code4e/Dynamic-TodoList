@@ -1,6 +1,7 @@
-const Todos = require('../models/todos');
+const Model = require('../models/todos');
+console.log(Model);
 module.exports.home = function(req, res){
-    Todos.find({}, function(err, todos){
+    Model.Todos.find({}, function(err, todos){
         if(err){
             console.log('Could not fetch from database');
             return res.redirect('back');

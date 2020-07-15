@@ -1,3 +1,4 @@
+// setting some focus styles on the input fields
 $('.element').focus(function (e) {
     if (e.target.tagName == 'SELECT') {
         $('option').css("background-color", "white");
@@ -5,11 +6,16 @@ $('.element').focus(function (e) {
     $(this).css("background-color", "#E8E8E8");
     $(this).parent().css("background-color", "#E8E8E8");
 });
+
+
 $('.element').focusout(function () {
     $(this).css("background-color", "");
     $(this).parent().css("background-color", "");
 });
 
+
+
+// Retain the checkbox state after refesh by saving them in local Storage
 $(function () {
     if (localStorage.input) {
         var checks = JSON.parse(localStorage.input);
@@ -27,17 +33,9 @@ $(':checkbox').on('change', function () {
 
 
 
-// $('#dueDate').on("change", function(){
-//     // console.log(this.value);
-//    var d = new Date(this.value); 
-//     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-//     console.log(d);
-//     console.log(d.getMonth());
-//     console.log(d.getDate());
-//     console.log(d.getFullYear());
-//     console.log(`${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`);
-// });
 
+
+// displaying the date with the required format 
 document.querySelectorAll('.dueDate').forEach(item => {
     let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     if (item.textContent != 'No Deadline') {
