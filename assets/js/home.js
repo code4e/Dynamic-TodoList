@@ -16,20 +16,20 @@ $('.element').focusout(function () {
 
 
 // Retain the checkbox state after refesh by saving them in local Storage
-$(function () {
-    if (localStorage.input) {
-        var checks = JSON.parse(localStorage.input);
-        jQuery(':checkbox').prop('checked', function (i) {
-            return checks[i];
-        });
-    }
-});
+// $(function () {
+//     if (localStorage.input) {
+//         var checks = JSON.parse(localStorage.input);
+//         jQuery(':checkbox').prop('checked', function (i) {
+//             return checks[i];
+//         });
+//     }
+// });
 
-$(':checkbox').on('change', function () {
-    localStorage.input = JSON.stringify(jQuery(':checkbox').map(function () {
-        return this.checked;
-    }).get());
-});
+// $(':checkbox').on('change', function () {
+//     localStorage.input = JSON.stringify(jQuery(':checkbox').map(function () {
+//         return this.checked;
+//     }).get());
+// });
 
 
 

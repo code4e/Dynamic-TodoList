@@ -61,21 +61,23 @@
             <!-- Render each item of list -->
 
             <% for(let i of todos_list) { %>
-            <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                <div class="d-flex">
-                    <input type="checkbox" class="" name="todosID" value="<%= i._id %>">
-                    <div class="added-item">
-                        <h4 class="text-justify"><%= i.description %></h4>
-                        <i class="fa fa-calendar text-secondary" aria-hidden="true"></i>
-                        <span class="text-secondary dueDate"><%= i.dueDate %></span>
-                    </div>
-                </div>
-                <span class="">
-                    <button class="btn Disabled <%= i.category %> category">
-                        <%= i.category%>
-                    </button>
-                </span>
-            </li>
+               
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        <div class="d-flex">
+                            <input type="checkbox" class="" name="todosID" value="<%= i._id %>">
+                            <div class="added-item">
+                                <h4 class="text-justify"><%= i.description %></h4>
+                                <i class="fa fa-calendar text-secondary" aria-hidden="true"></i>
+                                <span class="text-secondary dueDate"><%= i.dueDate %></span>
+                            </div>
+                        </div>
+                        <span class="">
+                            <button class="btn Disabled <%= i.category %> category">
+                                <%= i.category%>
+                            </button>
+                        </span>
+                    </li>
+                   
             <% } %>
         </ul>
     </form>

@@ -1,24 +1,5 @@
-
 // Require the database model to manipulate database 
 const Model = require("../models/todos");
-
-
-// Method to be used to remove Todo from Database
-var removeTodo = function (req, res) {
-    var items = [];
-    for (var key in req.body) {
-        items = req.body[key];
-    }
-    Model.Todos.remove({
-        _id: {
-            $in: items
-        }
-    }, function (err, data) {
-        if (err) throw err;
-        return res.redirect('back');
-
-    });
-}
 
 // Action for creating a new Todo and putting it into database
 module.exports.createTodo = function (req, res) {
@@ -36,29 +17,37 @@ module.exports.createTodo = function (req, res) {
         return res.redirect('back');
     });
 }
-// Method to Delete the todo and it to the doneTasks database Schema
 
+// Method to Delete the todo and it to the doneTasks database Schema
 module.exports.deleteTodo = function (req, res) {
+    // for deleted tasks, setting their completed field to true in the respective document
     if (req.body.todosID == undefined) {
         return res.redirect('back');
     }
-    for (let key in req.body) {
-        let id = req.body[key];
-        Model.Todos.findById(id, function (err, item) {
-            Model.DonetoDos.create({
-                description: item.description,
-                category: item.category,
-                dueDate: item.dueDate,
-            }, function (err, doneItem) {
-                if (err) {
-                    console.log('Error occured');
-                } else {
-                    console.log('******', doneItem);
-                }
-            });
-        });
 
+    var items = [];
+    for (var key in req.body) {
+        items = req.body[key];
     }
-    removeTodo(req, res);
 
+    let str = req.body.todosID;
+    console.log(str);
+    if(str.length == 24){
+        items = [];
+        items.push(str);
+    }
+
+    Model.Todos.bulkWrite(items.map((data) => ({
+        updateOne: {
+            filter: {
+                _id: data
+            },
+            update: {
+                $set: {
+                    completed: true
+                }
+            }
+        }
+    })));
+    return res.redirect('back');
 }

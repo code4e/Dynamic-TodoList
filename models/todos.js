@@ -15,6 +15,10 @@ const todoSchema = new mongoose.Schema({
     dueDate: {
         type: String,
         default: 'No Deadline'
+    },
+    completed: {
+        type: Boolean,
+        default: false
     }
 });
 
