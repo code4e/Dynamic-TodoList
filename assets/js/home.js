@@ -43,5 +43,6 @@ document.querySelectorAll('.dueDate').forEach(item => {
         var d = new Date(item.textContent);
         item.textContent = `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
         console.log(`${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`);
+        
     }
 });

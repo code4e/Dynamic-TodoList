@@ -2,7 +2,7 @@
 
 <!-- App Container -->
 <div class="container bg-white shadow-lg p-3 rounded">
-    <h1 class="text-center text-uppercase">ToDo App</h1>
+    <h1 class="text-center text-uppercase bg-info text-white">ToDo App</h1>
 
     <!-- Todo list submit input form -->
 
@@ -10,7 +10,7 @@
         <!-- Description Input -->
         <div class="form-group border-top border-bottom border-secondary">
             <label for="inputAddress" class="text-uppercase">Description</label>
-            <input type="text" class="form-control border-0 element" name="description" required id="inputAddress"
+            <input type="text" class="form-control border-0 element" name="description" autocomplete="off" required id="inputAddress"
                 placeholder="What do you need to do?" maxlength="100">
         </div>
 
@@ -50,7 +50,7 @@
         <!-- <button type="submit" class="btn btn-success addTask text-uppercase"><i class="fa fa-check"
                 aria-hidden="true"></i>Done Tasks</a>
         </button> -->
-        <a href="/done-tasks" class="bg-success done-link"><i class="fa fa-check"
+        <a href="/done-tasks" class="bg-success done-link text-uppercase"><i class="fa fa-check"
             aria-hidden="true"></i>Done Tasks</a>
     </div>
 
@@ -71,10 +71,11 @@
                             <div class="added-item">
                                 <h4 class="text-justify"><%= i.description %></h4>
                                 <i class="fa fa-calendar text-secondary" aria-hidden="true"></i>
-                                <span class="text-secondary dueDate"><%= i.dueDate %></span>
+                                <span class="text-secondary dueDate" data-ID=" <%= i._id %>"><%= i.dueDate %></span>
                             </div>
                         </div>
-                        <span class="">
+                        <span class="d-flex flex-column-reverse">
+                            <small class="text-right remaining-days" id=" <%= i._id %>"></small>
                             <button class="btn Disabled <%= i.category %> category">
                                 <%= i.category%>
                             </button>
