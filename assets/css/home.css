@@ -95,3 +95,21 @@ input[type="checkbox"]:checked+div i {
 .Other {
     background-color: yellowgreen;
 }
+.done-link{
+    text-decoration: none !important;
+    color: white;
+    padding: 7px 9px 6px 7px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.done-link:hover{
+    color: white !important;
+}
+.go-back-link{
+    display: inline-block;
+    padding: 10px 12px;
+    margin-top: 5px;
+    border-radius: 5px;
+    position: relative;
+}

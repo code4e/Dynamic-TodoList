@@ -1,0 +1,33 @@
+<%- include("header")%>
+
+
+<div class="container bg-white shadow-lg p-3 rounded">
+    <h1 class="text-center text-uppercase text-white bg-info">Completed Tasks</h1>
+    <ul class="list-group list-group-flush">
+        <!-- Render each item of list -->
+
+        <% for(let i of todos_list) { %>
+            <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center doneTask">
+                <div class="d-flex">
+                    <input type="checkbox" class="" name="todosID" value="<%= i._id %>" checked disabled>
+                    <div class="added-item">
+                        <h4 class="text-justify"><%= i.description %></h4>
+                        <i class="fa fa-calendar text-secondary" aria-hidden="true"></i>
+                        <span class="text-secondary dueDate"><%= i.dueDate %></span>
+                    </div>
+                </div>
+                <span class="">
+                    <button class="btn Disabled <%= i.category %> category">
+                        <%= i.category%>
+                    </button>
+                </span>
+            </li>
+        
+
+        <% } %>
+
+    </ul>
+    <a href="/go-back" class="bg-danger text-white go-back-link">Go Back</a>
+
+</div>
+<%- include("footer")%>

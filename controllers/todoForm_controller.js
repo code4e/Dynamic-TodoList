@@ -20,18 +20,19 @@ module.exports.createTodo = function (req, res) {
 
 // Method to Delete the todo and it to the doneTasks database Schema
 module.exports.deleteTodo = function (req, res) {
-    // for deleted tasks, setting their completed field to true in the respective document
+    // handling the base case i.e. when these are no items to be deleted
     if (req.body.todosID == undefined) {
         return res.redirect('back');
     }
 
+
+    // for deleted tasks, setting their completed field to true in the respective document
     var items = [];
     for (var key in req.body) {
         items = req.body[key];
     }
 
     let str = req.body.todosID;
-    console.log(str);
     if(str.length == 24){
         items = [];
         items.push(str);
@@ -44,7 +45,7 @@ module.exports.deleteTodo = function (req, res) {
             },
             update: {
                 $set: {
-                    completed: true
+                    completed: true,
                 }
             }
         }
